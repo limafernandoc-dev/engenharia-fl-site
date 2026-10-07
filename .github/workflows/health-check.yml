@@ -1,1 +1,41 @@
+name: Health Check Engenharia FL
 
+on:
+  workflow_dispatch:
+  schedule:
+    # Executa a cada 30 minutos
+    - cron: "*/30 * * * *"
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Verificar backend Engenharia FL
+        run: |
+          echo "Verificando backend da Engenharia FL..."
+
+          URL="https://vscode-918044b0-3936-4714-b410-2fc58615131d.preview.emergentagent.com/proxy/8001/api/settings"
+
+          HTTP_STATUS=$(curl -L \
+            --connect-timeout 20 \
+            --max-time 60 \
+            --retry 2 \
+            --retry-delay 5 \
+            -s \
+            -o /tmp/response.txt \
+            -w "%{http_code}" \
+            "$URL" || true)
+
+          echo "Status HTTP: $HTTP_STATUS"
+
+          if [ "$HTTP_STATUS" = "200" ]; then
+            echo "Backend Engenharia FL esta online."
+            cat /tmp/response.txt
+          else
+            echo "Backend nao respondeu normalmente."
+            echo "Resposta recebida:"
+            cat /tmp/response.txt || true
+            echo ""
+            echo "O health check sera executado novamente no proximo ciclo."
+          fi
