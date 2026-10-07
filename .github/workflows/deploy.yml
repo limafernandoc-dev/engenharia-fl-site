@@ -35,6 +35,7 @@ jobs:
         run: npm run build
         env:
           CI: false
+          REACT_APP_BACKEND_URL: https://site-build-231.preview.emergentagent.com
      
 
       - name: Configurar GitHub Pages
