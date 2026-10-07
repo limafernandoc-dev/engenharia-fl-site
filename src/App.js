@@ -1,4 +1,5 @@
 import "@/App.css";
+import { BrowserRouter } from "react-router-dom";
 import { Toaster } from "@/components/ui/sonner";
 import { SiteProvider } from "@/context/SiteContext";
 import { AuthProvider } from "@/context/AuthContext";
@@ -13,23 +14,25 @@ function App() {
     path.startsWith("/admin/");
 
   return (
-    <div className="App">
-      <SiteProvider>
-        {isAdmin ? (
-          <AuthProvider>
-            <Admin />
-          </AuthProvider>
-        ) : (
-          <Home />
-        )}
+    <BrowserRouter>
+      <div className="App">
+        <SiteProvider>
+          {isAdmin ? (
+            <AuthProvider>
+              <Admin />
+            </AuthProvider>
+          ) : (
+            <Home />
+          )}
 
-        <Toaster
-          position="top-center"
-          richColors
-          closeButton
-        />
-      </SiteProvider>
-    </div>
+          <Toaster
+            position="top-center"
+            richColors
+            closeButton
+          />
+        </SiteProvider>
+      </div>
+    </BrowserRouter>
   );
 }
 
