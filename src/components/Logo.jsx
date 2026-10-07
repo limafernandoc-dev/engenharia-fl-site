@@ -1,6 +1,6 @@
 export const LogoMark = ({ className = "", light = false }) => (
   <img
-    src="/logo_sem_fundo.png"
+    src="/logo_sem fundo.png"
     alt="Engenharia FL"
     className={`object-contain ${className}`}
   />
