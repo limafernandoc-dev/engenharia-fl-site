@@ -30,3 +30,11 @@ export const telLink = (settings) =>
   `tel:+55${(settings?.whatsapp || DEFAULT_SETTINGS.whatsapp).replace(/\D/g, "")}`;
 
 export const resolveImg = (url) => url || "";
+// Compatibilidade com componentes herdados do projeto original.
+// O site publicado funciona de forma estatica, sem backend do Emergent.
+export const api = {
+  get: async () => ({ data: [] }),
+  post: async () => ({ data: {} }),
+  put: async () => ({ data: {} }),
+  delete: async () => ({ data: {} }),
+};
