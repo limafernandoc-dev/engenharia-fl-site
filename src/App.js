@@ -1,6 +1,7 @@
 import "@/App.css";
 import { Toaster } from "@/components/ui/sonner";
 import { SiteProvider } from "@/context/SiteContext";
+import { AuthProvider } from "@/context/AuthContext";
 import Home from "@/pages/Home";
 import Admin from "@/pages/Admin";
 
@@ -14,7 +15,13 @@ function App() {
   return (
     <div className="App">
       <SiteProvider>
-        {isAdmin ? <Admin /> : <Home />}
+        {isAdmin ? (
+          <AuthProvider>
+            <Admin />
+          </AuthProvider>
+        ) : (
+          <Home />
+        )}
 
         <Toaster
           position="top-center"
