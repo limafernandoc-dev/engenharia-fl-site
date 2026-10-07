@@ -113,9 +113,13 @@ const Admin = () => {
           </div>
           <div className="flex items-center gap-3">
             <span className="hidden text-sm text-slate-500 sm:inline">{user.email}</span>
-            <Link to="/" data-testid="admin-view-site" className="rounded-sm border border-slate-300 px-4 py-2 font-mono text-xs uppercase tracking-wider text-navy transition-colors hover:bg-slate-50">
-              Ver site
-            </Link>
+            <a
+              href="https://engenhariafl.com.br/"
+              data-testid="admin-view-site"
+              className="rounded-sm border border-slate-300 px-4 py-2 font-mono text-xs uppercase tracking-wider text-navy transition-colors hover:bg-slate-50"
+>
+            Ver site
+</a>
             <Button
               variant="outline"
               onClick={logout}
