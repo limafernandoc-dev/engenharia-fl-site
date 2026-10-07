@@ -16,8 +16,8 @@ export const Logo = ({ light = false, compact = false }) => (
       alt="Engenharia FL"
       className={
         compact
-          ? "h-16 w-auto object-contain"
-          : "h-20 md:h-24 w-auto object-contain"
+          ? "h-24 w-auto object-contain"
+          : "h-32 md:h-36 w-auto object-contain"
       }
     />
   </span>
