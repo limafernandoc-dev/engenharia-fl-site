@@ -34,16 +34,16 @@ api.interceptors.response.use(
 );
 
 export const DEFAULT_SETTINGS = {
-  whatsapp: "5511999999999",
-  phone: "(11) 99999-9999",
-  email_main: "contato@engenhariafl.com.br",
-  email_quotes: "orcamentos@engenhariafl.com.br",
-  email_admin: "adm@engenhariafl.com.br",
+  whatsapp: "5511976224838",
+  phone: "(11) 97622-4838",
+  email_main: "fernando.lima@engenhariafl.com.br",
+  email_quotes: "contato@engenhariafl.com.br",
+  email_admin: "financeiro@engenhariafl.com.br",
   instagram: "https://www.instagram.com/engenharia_fl_brasil",
   linkedin: "",
   facebook: "",
   youtube: "",
-  location: "São Paulo – SP",
+  location: "São Paulo – SP / Região Metropolitana - SP",
 };
 
 let settingsPromise = null;
